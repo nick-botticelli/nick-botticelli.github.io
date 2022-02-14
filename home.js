@@ -2,6 +2,19 @@ function goTo(link) {
     location.href = link;
 }
 
+function is_iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document && navigator.maxTouchPoints > 2)
+}
+
 
 
 //////////   WebGL   //////////
@@ -268,22 +281,22 @@ function loadShader(gl, type, source) {
   return shader;
 }
 
-//main();
+if (!is_iOS()) {
+    (function() {
+        const canvas = document.getElementById('gl');
+        const context = canvas.getContext('webgl');
 
-(function() {
-  const canvas = document.getElementById('gl');
-  const context = canvas.getContext('webgl');
-
-  // resize the canvas to fill browser window dynamically
-  window.addEventListener('resize', resizeCanvas, false);
+        // Resize the canvas to fill browser window dynamically
+        window.addEventListener('resize', resizeCanvas, false);
         
-  function resizeCanvas() {
-      var devicePixelRatio = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      
-      main();
-  }
+        function resizeCanvas() {
+            var devicePixelRatio = window.devicePixelRatio || 1;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            main();
+        }
   
-  resizeCanvas();
-})();
+        resizeCanvas();
+    })();
+}
