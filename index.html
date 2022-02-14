@@ -1,5 +1,55 @@
-<html>
-    <head>
-        <h3>Hello</h3>
-    </head>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Nick Botticelli's Website</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Nick Botticelli">
+    <meta name="description" content="Nick Botticelli's personal website">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="canonical" href="https://nickb.website">
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
+    <canvas id="gl"></canvas>
+    <nav class="nav-bar display-text" role="navigation" aria-label="Navigation">
+      <div class="nav-bar-content">
+        <a href="/" class="nav-bar-title">Nick Botticelli's Website</a>
+      </div>
+    </nav>
+    <main class="full-height" role="main">
+      <div class="main-content">
+        <div class="card card-bottom-margin display-text" onClick="goTo('https://github.com/nick-botticelli')">
+          <div class="card-container">
+            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8a8 8 0 0 0-8-8z"/>
+            </svg>
+            <span class="card-text">GitHub Profile</span>
+          </div>
+        </div>
+        <div class="card display-text" onClick="goTo('https://www.linkedin.com/in/nick-botticelli')">
+          <div class="card-container">
+            <svg class="card-icon" viewBox="0 0 34 34" aria-hidden="true">
+              <path d="M34 2.5v29a2.5 2.5 0 0 1-2.5 2.5h-29A2.5 2.5 0 0 1 0 31.5v-29A2.5 2.5 0 0 1 2.5 0h29A2.5 2.5 0 0 1 34 2.5ZM10 13H5v16h5Zm.45-5.5a2.88 2.88 0 0 0-2.86-2.9H7.5a2.9 2.9 0 0 0 0 5.8 2.88 2.88 0 0 0 2.95-2.81ZM29 19.28c0-4.81-3.06-6.68-6.1-6.68a5.7 5.7 0 0 0-5.06 2.58h-.14V13H13v16h5v-8.51a3.32 3.32 0 0 1 3-3.58h.19c1.59 0 2.77 1 2.77 3.52V29h5Z"/>
+            </svg>
+            <span class="card-text">LinkedIn Profile</span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <section class="footer-footnotes" aria-label="Footnotes">
+          <div>Credits: Erin.Z (erinz.xyz) for initial WebGL shader</div>
+          <div>Copyright © 2022 Nick Botticelli. All rights reserved.</div>
+        </section>
+      </div>
+    </footer>
+  <script src="home.js"></script>
+  </body>
 </html>
