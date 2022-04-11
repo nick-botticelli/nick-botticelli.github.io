@@ -1,3 +1,7 @@
+var is_iOS = (/iPad|iPhone|iPod/.test(navigator.platform) ||
+(navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) &&
+!window.MSStream;
+
 function goTo(link) {
     location.href = link;
 }
@@ -281,13 +285,15 @@ function loadShader(gl, type, source) {
   return shader;
 }
 
-if (!is_iOS()) {
+if (!is_iOS) {
     (function() {
         const canvas = document.getElementById('gl');
         const context = canvas.getContext('webgl');
 
         // Resize the canvas to fill browser window dynamically
-        window.addEventListener('resize', resizeCanvas, false);
+        
+        if (!is_iOS)
+            window.addEventListener('resize', resizeCanvas, false);
         
         function resizeCanvas() {
             var devicePixelRatio = window.devicePixelRatio || 1;
